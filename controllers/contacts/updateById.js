@@ -14,4 +14,6 @@ const updateBtId = async (req, res) => {
   });
 };
 
-module.exports = updateBtId;
+module.exports = {
+  updateBtId,
+};

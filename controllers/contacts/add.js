@@ -9,4 +9,6 @@ const add = async (req, res) => {
   });
 };
 
-module.exports = add;
+module.exports = {
+  add,
+};

@@ -9,4 +9,6 @@ const getList = async (req, res) => {
   });
 };
 
-module.exports = getList;
+module.exports = {
+  getList,
+};

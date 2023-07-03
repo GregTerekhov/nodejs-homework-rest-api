@@ -16,4 +16,6 @@ const removeById = async (req, res) => {
   });
 };
 
-module.exports = removeById;
+module.exports = {
+  removeById,
+};
