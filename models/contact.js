@@ -3,11 +3,11 @@ const Joi = require("joi");
 
 const { handleSchemaValidationErrors } = require("../helpers");
 
-const emailRegexp = /^.+@.+\..+$/;
+const emailRegexp = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
 const phoneRegexp =
   /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/;
 
-const contactSchema = Schema(
+const contactSchema = new Schema(
   {
     name: {
       type: String,
@@ -25,6 +25,11 @@ const contactSchema = Schema(
     favorite: {
       type: Boolean,
       default: false,
+    },
+    owner: {
+      type: Schema.Types.ObjectId,
+      ref: "user",
+      required: true,
     },
   },
   { versionKey: false, timestamps: true }
