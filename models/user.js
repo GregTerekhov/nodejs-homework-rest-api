@@ -27,11 +27,13 @@ const userSchema = new Schema(
       type: String,
       default: null,
     },
+    avatarURL: {
+      type: String,
+      required: true,
+    },
   },
   { versionKey: false, timestamps: true }
 );
-
-userSchema.post("save", handleSchemaValidationErrors);
 
 userSchema.methods.setPassword = function (password) {
   this.password = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
@@ -40,6 +42,8 @@ userSchema.methods.setPassword = function (password) {
 userSchema.methods.comparePassword = function (password) {
   return bcrypt.compareSync(password, this.password);
 };
+
+userSchema.post("save", handleSchemaValidationErrors);
 
 const joiAuthSchema = Joi.object({
   password: Joi.string().required(),
