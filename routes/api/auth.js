@@ -11,4 +11,5 @@ router.post("/register", validation(joiAuthSchema), ctrlWrapper(ctrl.register));
 router.post("/login", validation(joiAuthSchema), ctrlWrapper(ctrl.login));
 
 router.post("/logout", checkAuthUser, ctrlWrapper(ctrl.logout));
+
 module.exports = router;
