@@ -3,7 +3,7 @@ const gravatar = require("gravatar");
 const { nanoid } = require("nanoid");
 require("dotenv").config();
 
-const { sendEmail } = require("../../helpers");
+const { sendEmail } = require("../../services");
 const { User } = require("../../models");
 
 const { BASE_URL } = process.env;

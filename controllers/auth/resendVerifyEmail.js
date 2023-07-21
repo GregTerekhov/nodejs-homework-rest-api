@@ -2,7 +2,7 @@ const { BadRequest } = require("http-errors");
 require("dotenv").config();
 
 const { User } = require("../../models");
-const { sendEmail } = require("../../helpers");
+const { sendEmail } = require("../../services");
 
 const { BASE_URL } = process.env;
 
